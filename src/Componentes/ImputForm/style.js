@@ -14,4 +14,13 @@ export const Container = styled.div`
     justify-content: center;
     gap: 1em;
     width: 100%;
-  }
+    }
+  
+`;
+
+export const RadioGroup = styled.div`
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 0.5em;
+`;
