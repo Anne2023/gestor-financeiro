@@ -28,3 +28,35 @@ function App() {
     // Utiliza a função reduce para somar todos os valores de receitas
     return incomes.reduce((total, income) => total + parseFloat(income.amount), 0);
   };
+  return (
+    <div className="App">
+      {/* Título da aplicação */}
+      <h1>Gerenciador Financeiro</h1>
+
+      {/* Exibe o saldo atual: total de receitas, total de despesas e saldo resultante */}
+      <div className="balance">
+        <h2>Total de Receitas: R$ {getTotalIncomes()}</h2>
+        <h2>Total de Despesas: R$ {getTotalExpenses()}</h2>
+        <h2>Saldo: R$ {getTotalIncomes() - getTotalExpenses()}</h2>
+      </div>
+
+      {/* Componentes para adicionar novas despesas e receitas */}
+      <div className="forms">
+        {/* Componente para adicionar despesas */}
+        <ExpenseForm addExpense={addExpense} />
+        {/* Componente para adicionar receitas */}
+        <IncomeForm addIncome={addIncome} />
+      </div>
+
+      {/* Listas para exibir despesas e receitas */}
+      <div className="lists">
+        {/* Componente para exibir lista de despesas */}
+        <ExpenseList expenses={expenses} />
+        {/* Componente para exibir lista de receitas */}
+        <IncomeList incomes={incomes} />
+      </div>
+    </div>
+  );
+}
+
+export default App;
