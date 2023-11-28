@@ -14,4 +14,17 @@ function App() {
   const addExpense = (expense) => {
     setExpenses([...expenses, expense]); // Adiciona uma nova despesa ao array de despesas
   };
+  const addIncome = (income) => {
+    setIncomes([...incomes, income]); // Adiciona uma nova receita ao array de receitas
+  };
 
+  // Funções para calcular o total de despesas e receitas
+  const getTotalExpenses = () => {
+    // Utiliza a função reduce para somar todos os valores de despesas
+    return expenses.reduce((total, expense) => total + parseFloat(expense.amount), 0);
+  };
+
+  const getTotalIncomes = () => {
+    // Utiliza a função reduce para somar todos os valores de receitas
+    return incomes.reduce((total, income) => total + parseFloat(income.amount), 0);
+  };
